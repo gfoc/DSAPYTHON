@@ -1,0 +1,23 @@
+//Program to implement binary search 
+class Binary_Search:
+    def __init__(self,nums):
+        self.nums = nums
+    def find_element(self):
+        x = int(input("Enter the element to  find "))
+        index =  -1
+        first = 0
+        last = len(self.nums)-1
+        while first <= last:
+            mid = (first+last)//2
+            if x == self.nums[mid]:
+                index = mid
+                print("The element found at index",index)
+                break
+            elif x > self.nums[mid]:
+                first = mid +1
+            else:
+                last = mid -1
+        if index  == -1 :
+            print("The element is not present in the array")
+z = Binary_Search([1,2,3,4,5,6,7,8,9,10,11,12,13,14])
+z.find_element()
